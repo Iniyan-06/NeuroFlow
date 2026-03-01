@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-border: var(--border-color);
+  --font-sans: 'Inter', system-ui, sans-serif;
+
+  --color-critical: #ef4444;
+  --color-meaningful: #a855f7;
+  --color-routine: #3b82f6;
+  --color-noise: #6b7280;
+
+  --color-energy-low: #f97316;
+  --color-energy-medium: #eab308;
+  --color-energy-high: #22c55e;
+}
+
+:root {
+  --background: #0d0d10;
+  --surface: #17171c;
+  --surface-2: #1e1e26;
+  --border-color: rgba(255, 255, 255, 0.07);
+  --foreground: #f0f0f5;
+  --muted: #6b7280;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: dark;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  min-height: 100dvh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.4s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out forwards;
+}
+
+.glass {
+  background: var(--surface);
+  border: 1px solid var(--border-color);
+  backdrop-filter: blur(12px);
+}
+
+.glass-2 {
+  background: var(--surface-2);
+  border: 1px solid var(--border-color);
+}

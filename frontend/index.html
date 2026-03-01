@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NeuroFlow - Cognitive Stability Monitor</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 40px;
+        }
+        .card {
+            background: #1e293b;
+            padding: 30px;
+            border-radius: 10px;
+            width: 400px;
+            margin: auto;
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: none;
+        }
+        button {
+            background: #3b82f6;
+            color: white;
+            cursor: pointer;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>🧠 NeuroFlow</h1>
+<p>Cognitive Overload Early Warning System</p>
+
+<div class="card">
+    <input type="number" id="sleep" placeholder="Sleep Hours">
+    <input type="number" id="stress" placeholder="Stress Level (1-5)">
+    <input type="number" id="focus" placeholder="Focus Hours">
+    <button onclick="checkOverload()">Check Stability</button>
+
+    <div class="result" id="result"></div>
+</div>
+
+<script>
+async function checkOverload() {
+    const sleep = document.getElementById("sleep").value;
+    const stress = document.getElementById("stress").value;
+    const focus = document.getElementById("focus").value;
+
+    const response = await fetch("https://neuroflow-g2l9.onrender.com/overload/score", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            sleep: Number(sleep),
+            stress: Number(stress),
+            focus: Number(focus)
+        })
+    });
+
+    const data = await response.json();
+    document.getElementById("result").innerText =
+        "Stability Score: " + data.score;
+}
+</script>
+
+</body>
+</html>
