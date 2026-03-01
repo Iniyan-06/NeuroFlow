@@ -7,6 +7,9 @@ This project includes:
 - A **Next.js frontend** (`localhost:3000`) with responsive UI for mobile + laptop
 - A **SQLite database** (`neuroflow.db`) for critical tasks and focus activity
 
+## Live Demo
+https://neuro-flow-swart.vercel.app/
+
 ## Problem
 People keep long task lists but still lose time due to:
 - Poor prioritization
