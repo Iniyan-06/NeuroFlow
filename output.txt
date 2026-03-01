@@ -1,0 +1,3 @@
+﻿Scenario 1 (High/120m): Best Task -> Fix Production Bug (Survival-critical)
+Scenario 2 (Low/30m): Best Task -> Check Emails (Noise)
+Scenario 3 (5m): Insufficient time for deep work. Recommended: 5-minute stretching or eye-rest.
