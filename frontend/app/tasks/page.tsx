@@ -64,7 +64,7 @@ function TaskRow({
             className="text-gray-700 hover:text-red-400 transition-colors text-sm"
             aria-label="Remove task"
           >
-            ?
+            X
           </button>
         </div>
       </div>
